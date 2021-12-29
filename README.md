@@ -8,7 +8,7 @@ To Access:
 1. Through a browser, log into pandorabots.com.
 2. Go to https://home.pandorabots.com/dash/bot-directory
 3. In the search bar, type: “Beth Culler - Ivy”
-4. In the chatbot message window, type “Hello”
+4. In the lower right corner of the page, click on the chat icon and type “Hello”
 
 Please see the Task Overview attached below for a full description of this project:
 
