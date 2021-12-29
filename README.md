@@ -12,3 +12,5 @@ To Access:
 
 Please see the Task Overview attached below for a full description of this project:
 
+[Task1-Instructions-and-Rubric.pdf](https://github.com/bculler17/Career_Counseling_Chatbot/files/7790788/Task1-Instructions-and-Rubric.pdf)
+
