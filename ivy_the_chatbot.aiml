@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+    <category>
+        <pattern> Hello </pattern>
+        <template> Hello! Welcome to the WGU Career and Professional Development chat room. My name is Ivy. I am excited to help you today.
+            What is your name? Please begin with "My name is .."          
+        </template>
+    </category>
+    <category>
+        <pattern>My name is *</pattern>
+        <template>It is nice to meet you, <set name="name"><star/></set>. Let's get started in identifying a career that is best suited for you and your talents and interests. 
+            How would you describe yourself?  
+            <button>
+                <text>skeptical</text>
+                <postback>fld</postback>
+            </button>
+            <button>
+                <text>empathetic</text>
+                <postback>elf</postback>
+            </button>
+            <button>
+                <text>a problem-solver</text>
+                <postback>eng</postback>
+            </button>
+            <button>
+                <text>a leader</text>
+                <postback>a</postback>
+            </button>
+        </template>
+    </category>
+    <category>
+        <pattern>fld</pattern>
+        <template>
+            <think><set name="field">Security or Government</set></think>
+            Security or Government may be a field you would enjoy working in. Let's narrow down a specific computing role within that field.. <split/>
+            <srai>a</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>elf</pattern>
+        <template>
+            <think><set name="field">Healthcare or Non-Profit</set></think>
+            Healthcare or Social Services may be a field you would enjoy working in. Let's narrow down a specific computing role within that field.. <split/>
+            <srai>a</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>eng</pattern>
+        <template>
+            <think><set name="field">Engineering</set></think>
+            Engineering may be a field you would enjoy working in. Let's narrow down a specific computing role within that field.. <split/>
+            <srai>a</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>a</pattern>
+        <template> When it comes to your finished work product, what’s most important? 
+            <button>
+                <text>accuracy and/or solving a problem</text>
+                <postback>bnd</postback>
+            </button>
+            <button>
+                <text>beauty and/or functionality</text>
+                <postback>fnd</postback>
+            </button>
+        </template>
+    </category>
+    <category>
+        <pattern>bnd</pattern>
+        <template>
+            <think><set name="end">"Back End or Full Stack</set></think>
+            <srai>b</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>fnd</pattern>
+        <template>
+            <think><set name="end">"Front End</set></think>
+            <srai>b</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>b</pattern>
+        <template> Which coding languages do you enjoy working with best?
+            <button>
+                <text>Scripting languages like Python, JavaScript, PHP, bash</text>
+                <postback>adm</postback>
+            </button>
+            <button>
+                <text>Compiled languages like Java, C++</text>
+                <postback>pgm</postback>
+            </button>
+            <button>
+                <text>Front end languages like HTML, CSS</text>
+                <postback>wd</postback>
+            </button>
+        </template>
+    </category>
+    <category>
+        <pattern>adm</pattern>
+        <template> Awesome! One of the most common usages of scripting languages is to automate tasks and, therefore, simplify administration.
+            Which form of administration appeals the most to you?
+            <card>
+                <title>
+                    I would prefer to..
+                </title>
+                <image>https://cdn.pixabay.com/photo/2016/03/31/18/26/computer-1294359_960_720.png</image>
+                <button>
+                    <text>Ensure the availability, integrity and security of data.</text>
+                    <postback>dba</postback>
+                </button>
+                <button>
+                    <text>Organize, install, and support an organization's computer systems. </text>
+                    <postback> os </postback>
+                </button>
+            </card>
+        </template>
+    </category>
+    <category>
+        <pattern>dba</pattern>
+        <template>
+            <image>https://cdn.pixabay.com/photo/2017/06/12/04/21/database-2394312_960_720.jpg</image>
+            Thank you, <get name="name"/>! With the answers you've provided, "Database Administrator" is a good match for you.
+            Consider becoming a DBA in the <get name="field"/> sector.
+            <![CDATA[
+                <a target="_blank" href="https://www.bls.gov/ooh/computer-and-information-technology/database-administrators.htm">Click here to learn more.</a>
+            ]]>
+        </template>
+    </category>
+    <category>
+        <pattern>os</pattern>
+        <template>
+            <image>https://cdn.pixabay.com/photo/2016/02/09/08/05/administrator-1188494_960_720.jpg</image>
+            Thank you, <get name="name"/>! With the answers you've provided, "System Administrator" is a good match for you.
+            Consider becoming an Administrator in the <get name="field"/> sector.
+            <![CDATA[
+                <a target="_blank" href="https://www.bls.gov/ooh/computer-and-information-technology/mobile/network-and-computer-systems-administrators.htm#:~:text=Administrators%20fix%20computer%20server%20problems.&text=They%20organize%2C%20install%2C%20and%20support,and%20other%20data%20communication%20systems.">Click here to learn more.</a>
+            ]]>
+        </template>
+    </category>
+    <category>
+        <pattern>wd</pattern>
+        <template>
+            <image>https://cdn.pixabay.com/photo/2021/02/02/15/06/website-5974312_960_720.png</image>
+            Thank you, <get name="name"/>! With the answers you've provided, <get name="end"/> Web Developer" is a good match for you. 
+            Consider becoming a Web Developer in the <get name="field"/> sector.
+            <![CDATA[
+                <a target="_blank" href="https://www.bls.gov/ooh/computer-and-information-technology/web-developers.htm#:~:text=the%20website's%20layout.-,Web%20developers%20create%20and%20maintain%20websites.,create%20content%20for%20the%20site.">Click here to learn more.</a>
+            ]]>
+        </template>
+    </category>
+    <category>
+        <pattern>pgm</pattern>
+        <template>Exciting! Many of the most in-demand and best paying job opportunities in the computing industry involve programming.
+            Which type of programming excites you most?
+            <carousel>
+                <card>
+                    <image>https://cdn.pixabay.com/photo/2019/08/19/20/18/artificial-intelligence-4417279__340.jpg</image>
+                    <title>I prefer..</title>
+                    <subtitle></subtitle>
+                    <button>
+                        <text> developing operating software that can be used for robots or artificial intelligence programs.</text>
+                        <postback>ai</postback>
+                    </button>
+                </card>
+                <card>
+                    <image>https://cdn.pixabay.com/photo/2020/11/11/05/57/woman-5731624__340.jpg</image>
+                    <title>I prefer..</title>
+                    <subtitle></subtitle>
+                    <button>
+                        <text> developing computer software and mobile applications.</text>
+                        <postback>cpg</postback>
+                    </button>
+                </card>
+            </carousel>
+        </template>
+    </category>
+    <category>
+        <pattern>ai</pattern>
+        <template>
+            <image>https://cdn.pixabay.com/photo/2020/12/08/16/54/brain-5814961_960_720.jpg</image>
+            Thank you, <get name="name"/>! With the answers you've provided, "Artificial Intelligence Programmer" is a good match for you. 
+            Consider becoming an AI Programmer in the <get name="field"/> sector.
+            <![CDATA[
+                <a target="_blank" href="https://www.simplilearn.com/tutorials/artificial-intelligence-tutorial/how-to-become-an-ai-engineer">Click here to learn more.</a>
+            ]]>
+        </template>
+    </category>
+    <category>
+        <pattern>cpg</pattern>
+        <template>
+            <image>https://cdn.pixabay.com/photo/2019/10/07/10/30/programming-4532296__340.jpg</image>
+            Thank you, <get name="name"/>! With the answers you've provided, "Software Developer" is a good match for you. 
+            Consider becoming a Software Developer in the <get name="field"/> sector.
+            <![CDATA[
+                <a target="_blank" href="https://www.bls.gov/ooh/computer-and-information-technology/software-developers.htm">Click here to learn more.</a>
+            ]]>
+        </template>
+    </category>
+    <category>
+        <pattern>*</pattern>
+        <template>
+            Hmm..I'm sorry. I have no answer for that. 
+            Please try a different answer, or say "Hello" to begin from the beginning.
+        </template>
+    </category>
+</aiml>
