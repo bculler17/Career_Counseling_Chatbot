@@ -1,4 +1,4 @@
-# Career_Counseling_Chatbot
+# Career Counseling Chatbot
 A chatbot developed to help students discover a career path they might wish to pursue. 
 
 WGU Introduction to Artificial Intelligence - C951
